@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  section {
+    @apply py-[50px];
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-full w-[1400px] mx-auto;
+  }
+
+  .header {
+    @apply w-full h-[10dvh] py-3 md:px-4;
+  }
+}
