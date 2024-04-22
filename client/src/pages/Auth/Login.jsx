@@ -118,7 +118,7 @@ const Login = () => {
           </div>
 
           <button className="bg-[#ddd] p-2.5 rounded-md w-full md:w-fit font-[600]">
-            {isLoading && !errors ? <Loader size={25} color="#333" /> : `Login`}
+            {isLoading ? <Loader size={25} color="#333" /> : `Login`}
           </button>
         </form>
         <p className="text-center text-[16px]">

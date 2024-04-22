@@ -70,7 +70,7 @@ const Recipe = () => {
     <>
       <section className="section bg-[#eeebe4]">
         <div className="container text-center">
-          <div className=" max-w-[500px] bg-[#0066FF2C] mx-auto rounded-md flex items-center justify-between">
+          <div className="max-w-[500px] bg-[#0066FF2C] mx-auto rounded-md flex items-center justify-between">
             <input
               type="search"
               placeholder="Search recipes..."

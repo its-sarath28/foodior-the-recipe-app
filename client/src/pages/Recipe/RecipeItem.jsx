@@ -32,35 +32,37 @@ const RecipeItem = ({
   const creatorAvatar = creator ? creator.avatar : null;
 
   return (
-    <div className="p-2 lg:p-2 rounded-[10px] border border-sky-100 hover:shadow-2xl">
-      <figure className="h-[10rem]">
-        {recipePhoto ? (
-          <img
-            src={recipePhoto}
-            alt="thumbnail"
-            className="w-full rounded-md h-full object-cover"
-          />
-        ) : (
-          <img
-            src={recipeImageURL}
-            alt="thumbnail"
-            className="w-full rounded-md h-full object-cover"
-          />
-        )}
-      </figure>
+    <div className="p-2 lg:p-2 rounded-[10px] border border-sky-100 hover:shadow-2xl flex flex-col justify-between h-full">
+      <div>
+        <figure className="h-[10rem]">
+          {recipePhoto ? (
+            <img
+              src={recipePhoto}
+              alt="thumbnail"
+              className="w-full rounded-md h-full object-cover"
+            />
+          ) : (
+            <img
+              src={recipeImageURL}
+              alt="thumbnail"
+              className="w-full rounded-md h-full object-cover"
+            />
+          )}
+        </figure>
 
-      <Link to={`/recipe/${recipeId}`}>
-        <h2 className="text-[18px] lg:text-[24px] mt-4 font-[600] hover:underline">
-          {title}
-        </h2>
-      </Link>
+        <Link to={`/recipe/${recipeId}`}>
+          <h2 className="text-[18px] lg:text-[24px] mt-4 font-[600] hover:underline">
+            {title}
+          </h2>
+        </Link>
 
-      <p
-        className="text-gray-500"
-        dangerouslySetInnerHTML={{ __html: truncatedContent }}
-      ></p>
+        <p
+          className="text-gray-500"
+          dangerouslySetInnerHTML={{ __html: truncatedContent }}
+        ></p>
 
-      <p className="my-2 text-gray-500">{likeCount} Likes</p>
+        <p className="my-2 text-gray-500">{likeCount} Likes</p>
+      </div>
 
       <div className="flex items-center justify-between">
         {creatorId === userId ? (

@@ -115,6 +115,12 @@ const Dashboard = () => {
         <div className="grid md:grid-cols-3 gap-[20px]">
           <div className="pb-[20px] rounded-md">
             <div className="flex flex-col items-center justify-center ">
+              {isLoading && (
+                <div className="w-[150px] h-[150px] flex items-center justify-center rounded-full border-2 border-solid p-1">
+                  <Loader size={25} color="#333" />
+                </div>
+              )}
+
               {!previewURL && userData?.avatar && (
                 <figure className="w-[150px] h-[150px] rounded-full border-2 border-solid p-1">
                   <img
@@ -232,6 +238,12 @@ const Dashboard = () => {
                 Liked Blogs
               </button>
             </div>
+
+            {isLoading && (
+              <div className="h-[57vh] flex items-center justify-center">
+                <Loader size={25} color="#333" />
+              </div>
+            )}
 
             {tab === "myRecipes" && <MyRecipes recipes={userData.recipes} />}
             {tab === "settings" && <ProfileSettings userData={userData} />}
